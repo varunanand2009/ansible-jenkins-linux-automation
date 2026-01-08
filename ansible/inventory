@@ -1,2 +1,2 @@
 [linux]
-192.168.163.138
+192.168.163.138 ansible_user=varunanand
