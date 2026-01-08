@@ -1,0 +1,18 @@
+pipeline {
+  agent any
+  stages {
+    stage('Clone Repo') {
+      steps {
+        git 'https://github.com/<your-username>/ansible-jenkins-linux-automation.git'
+      }
+    }
+    stage('Run Ansible') {
+      steps {
+        sh '''
+          cd ansible
+          ansible-playbook -i inventory site.yml
+        '''
+      }
+    }
+  }
+}
